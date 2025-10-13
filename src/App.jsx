@@ -220,9 +220,9 @@ export default function App() {
         id="home"
         className="min-h-screen flex items-center justify-center pt-16 px-4"
       >
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div
-            className={`space-y-6 transition-all duration-1000 ${
+            className={`space-y-6 flex flex-col justify-center items-center text-center transition-all duration-1000 ${
               isVisible.home
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-10"
@@ -284,7 +284,7 @@ export default function App() {
           </div>
 
           <div
-            className={`relative transition-all duration-1000 delay-300 ${
+            className={`relative order-first lg:order-2 transition-all duration-1000 delay-300 ${
               isVisible.home
                 ? "opacity-100 translate-x-0"
                 : "opacity-0 translate-x-10"
@@ -293,12 +293,12 @@ export default function App() {
             <div className="relative w-full aspect-square max-w-md mx-auto">
               <div className="absolute inset-0 bg-blue-600 rounded-full blur-3xl opacity-20 animate-pulse"></div>
               <div className="relative w-full h-full rounded-full overflow-hidden border-8 border-gray-900 shadow-2xl">
-                <div className="w-full h-full bg-gray-800 flex items-center justify-center text-6xl font-bold text-white">
+                <div className="w-full h-full bg-black flex items-center justify-center text-6xl font-bold text-white">
                   <img
                     src={bg}
                     // src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
                     alt="Elijah Usih"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain scale-150 mt-20"
                   />
                   {/* EU */}
                 </div>
