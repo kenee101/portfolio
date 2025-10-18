@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
-import logo from "./assets/logo-1.png";
+import negzusImg from "./assets/negzus.png";
+import fastPizzaImg from "./assets/fast-pizza.png";
 import bg from "./assets/background-2.jpg";
 import forkifyImg from "./assets/forkify.png";
 import travelImg from "./assets/travel.png";
@@ -15,10 +16,13 @@ import {
   X,
   Code,
   Palette,
+  AppWindow,
+  ServerCog,
   Zap,
   ArrowRight,
   Download,
   MapPin,
+  Brain,
 } from "lucide-react";
 
 export default function App() {
@@ -70,11 +74,26 @@ export default function App() {
 
   const projects = [
     {
+      title: "Negzus",
+      description:
+        "Gas station website for real-time availability and QR code payment solution",
+      image: negzusImg,
+      tags: [
+        "Next.js",
+        "Paystack",
+        "Supabase",
+        "TanStack Query",
+        "Tailwind CSS",
+      ],
+      link: "https://negzus.vercel.app/",
+      github: "https://github.com/kenee101",
+    },
+    {
       title: "Forkify",
       description:
         "Recipe search application with bookmarking, custom recipe creation, and interactive UI. Built with vanilla JavaScript and MVC architecture.",
       image: forkifyImg,
-      tags: ["JavaScript", "API", "MVC", "Responsive"],
+      tags: ["JavaScript", "API", "MVC", "Responsive", "Git", "GitHub"],
       link: "https://forkify-usih.netlify.app/",
       github: "https://github.com/kenee101",
     },
@@ -83,7 +102,7 @@ export default function App() {
       description:
         "Smart packing list manager with sorting, filtering, and statistics. Helps travelers organize items efficiently with a clean interface.",
       image: travelImg,
-      tags: ["React", "State Management", "UI/UX"],
+      tags: ["React", "Redux", "UI/UX", "Git", "GitHub"],
       link: "https://far-away-from-home.netlify.app/",
       github: "https://github.com/kenee101",
     },
@@ -92,7 +111,7 @@ export default function App() {
       description:
         "Full-featured blog with rich text editor, post management, and responsive design. Demonstrates CRUD operations and modern React patterns.",
       image: blogImg,
-      tags: ["React", "Forms", "CRUD"],
+      tags: ["React", "Forms", "CRUD", "Git", "GitHub"],
       link: "https://post-on-blog.netlify.app/",
       github: "https://github.com/kenee101",
     },
@@ -101,33 +120,63 @@ export default function App() {
       description:
         "Movie database with search, ratings, and watchlist features. Integrates with external APIs for real-time movie information.",
       image: usePopcornImg,
-      tags: ["React", "API Integration", "Hooks"],
+      tags: ["React", "API Integration", "Hooks", "Git", "GitHub"],
       link: "https://usePopcorn.netlify.app/",
+      github: "https://github.com/kenee101",
+    },
+    {
+      title: "Pizza takeout",
+      description:
+        "Pizza ordering app with real-time updates. Built with React.",
+      image: fastPizzaImg,
+      tags: ["React", "Hooks", "Git", "GitHub"],
+      link: "https://pizza-takeout.netlify.app/",
       github: "https://github.com/kenee101",
     },
   ];
 
   const skills = [
     {
-      icon: <Code className="w-8 h-8" />,
+      icon: <AppWindow className="w-8 h-8" />,
       title: "Frontend Development",
       description:
         "Expert in HTML5, CSS3, and modern JavaScript (ES6+). Building responsive, accessible web applications with clean, semantic code.",
-      color: "from-blue-500 to-cyan-500",
+      color: "white",
+    },
+    {
+      icon: <Code className="w-8 h-8" />,
+      title: "Mobile Development",
+      description:
+        "Proficient in React Native, expo, and component libraries including heroui, shadcn, and tailwindcss. Creating dynamic, performant user interfaces with modern patterns.",
+      color: "white",
+    },
+    {
+      icon: <ServerCog className="w-8 h-8" />,
+      title: "Backend Development",
+      description:
+        "Experienced in Node.js, express, mongoose, fastapi, postgresql, mongodb, redis, and supabase. Building scalable, secure, and performant server-side applications.",
+      color: "white",
+    },
+    {
+      icon: <Brain className="w-8 h-8" />,
+      title: "Artificial Intelligence",
+      description:
+        "Master in machine learning, computer vision, natural language processing, deep learning, and generative AI. Solving complex problems by identifying patterns in unstructured data, training models, gathering insights, and building AI-powered applications. In my arsenal are tools like python, pytorch, tensorflow, keras, scikit-learn, opencv, HuggingFace, and LangChain.",
+      color: "white",
     },
     {
       icon: <Palette className="w-8 h-8" />,
       title: "React Ecosystem",
       description:
-        "Proficient in React, hooks, context API, and component architecture. Creating dynamic, performant user interfaces with modern patterns.",
-      color: "from-purple-500 to-pink-500",
+        "Expert in React, Next.js, hooks, context API, redux, and component architecture. Creating dynamic, performant user interfaces with modern patterns.",
+      color: "white",
     },
     {
       icon: <Zap className="w-8 h-8" />,
       title: "Performance & UX",
       description:
         "Optimizing web performance, implementing smooth animations, and crafting intuitive user experiences that drive engagement.",
-      color: "from-orange-500 to-red-500",
+      color: "white",
     },
   ];
 
@@ -139,7 +188,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen dark:bg-black">
+    <div className="min-h-screen bg-black">
       {/* Header */}
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -148,7 +197,10 @@ export default function App() {
       >
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="text-2xl font-bold bg-blue-900 bg-clip-text text-transparent">
+            <div
+              onClick={() => scrollToSection("home")}
+              className="text-2xl cursor-pointer font-bold bg-blue-900 bg-clip-text text-transparent"
+            >
               Elijah.dev
             </div>
 
@@ -158,7 +210,7 @@ export default function App() {
                 <Link
                   key={item}
                   to={item}
-                  spy={true}
+                  // spy={true}
                   smooth={true}
                   duration={500}
                   offset={-100}
@@ -197,7 +249,7 @@ export default function App() {
                     setActiveSection(item);
                     setIsMenuOpen(false);
                   }}
-                  onSetActive={() => setActiveSection(item)}
+                  // onSetActive={() => setActiveSection(item)}
                 >
                   <span
                     className={`${
@@ -267,7 +319,7 @@ export default function App() {
                 <Github className="w-6 h-6" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/elijah-usih-396b4b257/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-gray-800 rounded-full hover:bg-blue-900/30 transition-colors"
@@ -325,7 +377,7 @@ export default function App() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
             {skills.map((skill, index) => (
               <div
                 key={index}
@@ -506,44 +558,35 @@ export default function App() {
               </div>
 
               <div className="pt-6">
-                <button className="w-full px-8 py-4 bg-gray-950 hover:bg-blue-800 cursor-pointer text-white rounded-lg font-semibold hover:shadow-xl transition-all duration-300 flex items-center justify-center space-x-2">
+                <a
+                  title="Download Resume"
+                  aria-label="Download Resume"
+                  href="/USIH_ELIJAH_RESUME_UPDATED.pdf"
+                  download="Elijah_Usih_Resume.pdf"
+                  className="w-full px-8 py-4 bg-gray-950 hover:bg-blue-800 cursor-pointer text-white rounded-lg font-semibold hover:shadow-xl transition-all duration-300 flex items-center justify-center space-x-2"
+                >
                   <Download className="w-5 h-5" />
                   <span>Download Resume</span>
-                </button>
+                </a>
               </div>
             </div>
 
-            <form className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium mb-2">Name</label>
-                <input
-                  type="text"
-                  className="w-full px-4 py-3 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition-all"
-                />
+            <div className="space-y-6 md:space-y-0 md:flex md:items-center md:justify-center">
+              <div className="text-center">
+                <p className="text-gray-400 mb-4">
+                  Feel free to reach out to me directly at:
+                </p>
+                <a
+                  href="mailto:elijah.usih@stu.cu.edu.ng?subject=Work%20Inquiry&body=Hello%20Elijah,%0D%0A%0D%0AI%20came%20across%20your%20portfolio%20and%20wanted%20to%20get%20in%20touch%20about..."
+                  className="inline-block px-8 py-4 bg-blue-700 hover:bg-blue-800 text-white rounded-lg font-semibold hover:shadow-xl transition-all duration-300"
+                >
+                  Send me an Email
+                </a>
+                <p className="text-sm text-gray-500 mt-2">
+                  Opens in your default email service
+                </p>
               </div>
-              <div>
-                <label className="block text-sm font-medium mb-2">Email</label>
-                <input
-                  type="email"
-                  className="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition-all"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium mb-2">
-                  Message
-                </label>
-                <textarea
-                  rows="4"
-                  className="w-full px-4 py-3 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition-all resize-none"
-                ></textarea>
-              </div>
-              <button
-                type="submit"
-                className="w-full px-8 py-4 bg-gray-950 hover:bg-blue-800 cursor-pointer text-white rounded-lg font-semibold hover:shadow-xl transition-all duration-300"
-              >
-                Send Message
-              </button>
-            </form>
+            </div>
           </div>
         </div>
       </section>
@@ -551,7 +594,7 @@ export default function App() {
       {/* Footer */}
       <footer className="py-8 px-4 border-t border-gray-700">
         <div className="max-w-7xl mx-auto text-center text-gray-400">
-          <p>&copy; 2025 Elijah Usih. Built with passion for the profession</p>
+          <p>&copy; 2025 Elijah Usih</p>
         </div>
       </footer>
     </div>
