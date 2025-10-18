@@ -480,9 +480,12 @@ export default function App() {
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold mb-3 group-hover:text-blue-600 transition-colors">
+                  <a
+                    href={project.link}
+                    className="text-2xl font-bold mb-3 group-hover:text-blue-600 transition-colors"
+                  >
                     {project.title}
-                  </h3>
+                  </a>
                   <p className="text-gray-300 mb-4">{project.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
