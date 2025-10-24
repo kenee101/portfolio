@@ -91,7 +91,7 @@ export default function App() {
     {
       title: "Forkify",
       description:
-        "Recipe search application with bookmarking, custom recipe creation, and interactive UI. Built with vanilla JavaScript and MVC architecture.",
+        "Recipe search application with bookmarking, custom recipe creation, pagination. Built with vanilla JavaScript and MVC architecture.",
       image: forkifyImg,
       tags: ["JavaScript", "API", "MVC", "Responsive", "Git", "GitHub"],
       link: "https://forkify-usih.netlify.app/",
@@ -394,7 +394,7 @@ export default function App() {
                   {skill.icon}
                 </div>
                 <h3 className="text-2xl font-bold mb-4">{skill.title}</h3>
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                <p className="text-gray-200 leading-relaxed">
                   {skill.description}
                 </p>
               </div>
@@ -417,7 +417,7 @@ export default function App() {
               ].map((tech) => (
                 <span
                   key={tech}
-                  className="px-4 py-2 bg-white dark:bg-gray-800 rounded-full text-sm font-medium shadow-sm"
+                  className="px-4 py-2 bg-white text-black rounded-full text-sm font-medium shadow-sm"
                 >
                   {tech}
                 </span>
