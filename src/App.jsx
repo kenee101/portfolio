@@ -403,7 +403,7 @@ export default function App() {
 
           <div className="flex flex-col justify-center items-center mt-16 p-8 bg-gradient-to-r from-blue-900/20 to-purple-900/20 rounded-2xl">
             <h3 className="text-2xl font-bold mb-4">Technology Stack</h3>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex items-center justify-center flex-wrap gap-3">
               {[
                 "Next.js",
                 "Expo",
