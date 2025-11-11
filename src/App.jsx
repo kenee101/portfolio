@@ -413,7 +413,7 @@ export default function App() {
                 "FastAPI",
                 "Python",
                 "Tailwind CSS",
-                "Express",
+                "NestJS",
               ].map((tech) => (
                 <span
                   key={tech}
@@ -460,14 +460,14 @@ export default function App() {
                   </div>
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:scale-110 group-hover:z-10 group-hover:backdrop-blur-sm group-hover:backdrop-brightness-50 group-hover:backdrop-saturate-200 transition-all duration-300">
                     <div className="flex space-x-4">
-                      <a
+                      {/* <a
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="p-3 bg-white rounded-full hover:scale-110 transition-transform"
                       >
                         <ExternalLink className="w-6 h-6 text-gray-900" />
-                      </a>
+                      </a> */}
                       <a
                         href={project.github}
                         target="_blank"
@@ -480,12 +480,26 @@ export default function App() {
                   </div>
                 </div>
                 <div className="p-6">
-                  <a
+                  {/* <a
                     href={project.link}
                     className="text-2xl font-bold mb-3 group-hover:text-blue-600 transition-colors"
                   >
                     {project.title}
-                  </a>
+                  </a> */}
+                  {project.link === "https://negzus.vercel.app/" ? (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-2xl font-bold mb-3 group-hover:text-blue-600 transition-colors"
+                    >
+                      {project.title}
+                    </a>
+                  ) : (
+                    <h3 className="text-2xl font-bold mb-3 group-hover:text-blue-600 transition-colors">
+                      {project.title}
+                    </h3>
+                  )}
                   <p className="text-gray-300 mb-4">{project.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
