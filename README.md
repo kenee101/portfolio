@@ -14,7 +14,7 @@ This is a portfolio website built with React and Tailwind CSS.
 
 ## Live Demo
 
-https://elijah.vercel.app/
+https://portfolio-usih.netlify.app/
 
 ## Installation
 
