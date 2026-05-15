@@ -594,7 +594,7 @@ export default function App() {
                   Feel free to reach out to me directly at:
                 </p>
                 <a
-                  href="mailto:elijah.usih@stu.cu.edu.ng?subject=Work%20Inquiry&body=Hello%20Elijah,%0D%0A%0D%0AI%20came%20across%20your%20portfolio%20and%20wanted%20to%20get%20in%20touch%20about..."
+                  href="mailto:keneusih@gmail.com?subject=Job%20Inquiry&body=Hello%20Elijah,%0D%0A%0D%0AI%20came%20across%20your%20portfolio%20and%20wanted%20to%20get%20in%20touch%20about..."
                   className="inline-block px-8 py-4 bg-blue-700 hover:bg-blue-800 text-white rounded-lg font-semibold hover:shadow-xl transition-all duration-300"
                 >
                   Send me an Email
@@ -611,7 +611,7 @@ export default function App() {
       {/* Footer */}
       <footer className="py-8 px-4 border-t border-gray-700">
         <div className="max-w-7xl mx-auto text-center text-gray-400">
-          <p>&copy; 2025 Elijah Usih</p>
+          <p>&copy; 2026 Elijah Usih</p>
         </div>
       </footer>
     </div>
