@@ -1,0 +1,53 @@
+import type { IconType } from "react-icons";
+import { DiJava } from "react-icons/di";
+import {
+  SiGo,
+  SiPython,
+  SiTypescript,
+  SiGin,
+  SiSpringboot,
+  SiNestjs,
+  SiFastapi,
+  SiDotnet,
+  SiPostgresql,
+  SiMongodb,
+  SiMysql,
+  SiRedis,
+  SiApachekafka,
+  SiDocker,
+  SiNginx,
+  SiGithubactions,
+  SiTensorflow,
+  SiOpencv,
+  SiLangchain,
+  SiNextdotjs,
+  SiReact,
+} from "react-icons/si";
+
+// Protocols/patterns (REST, gRPC, WebSocket) have no brand mark and are
+// intentionally left without an icon.
+export const TECH_ICONS: Record<string, IconType> = {
+  Go: SiGo,
+  Java: DiJava,
+  Python: SiPython,
+  TypeScript: SiTypescript,
+  Gin: SiGin,
+  "Spring Boot": SiSpringboot,
+  NestJS: SiNestjs,
+  FastAPI: SiFastapi,
+  ".NET": SiDotnet,
+  PostgreSQL: SiPostgresql,
+  MongoDB: SiMongodb,
+  MySQL: SiMysql,
+  Redis: SiRedis,
+  Kafka: SiApachekafka,
+  Docker: SiDocker,
+  Nginx: SiNginx,
+  "GitHub Actions": SiGithubactions,
+  TensorFlow: SiTensorflow,
+  OpenCV: SiOpencv,
+  LangChain: SiLangchain,
+  "Next.js": SiNextdotjs,
+  React: SiReact,
+  "React Native": SiReact,
+};
